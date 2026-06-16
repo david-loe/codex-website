@@ -1,0 +1,59 @@
+---
+const navItems = [
+  { href: '/', label: 'Start' },
+  { href: '/about/', label: 'Profil' },
+  { href: '/services/', label: 'Leistungen' },
+  { href: '/contact/', label: 'Kontakt' },
+];
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+---
+
+<header class="border-b border-[var(--line)] bg-white/90 backdrop-blur">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4" aria-label="Hauptnavigation">
+    <a href="/" class="text-lg font-semibold tracking-[0] text-[var(--ink)]">
+      Website Starter
+    </a>
+
+    <ul class="hidden items-center gap-7 text-sm font-medium text-[var(--muted)] md:flex">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class:list={[
+              'transition hover:text-[var(--accent)]',
+              isActive(item.href) && 'text-[var(--accent)]',
+            ]}
+            aria-current={isActive(item.href) ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <details class="relative md:hidden">
+      <summary class="flex cursor-pointer list-none items-center rounded-md border border-[var(--line)] px-3 py-2 text-sm font-medium text-[var(--ink)] [&::-webkit-details-marker]:hidden">
+        Menü
+      </summary>
+      <ul class="absolute right-0 z-20 mt-3 w-48 rounded-md border border-[var(--line)] bg-white p-2 text-sm font-medium shadow-lg">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                'block rounded px-3 py-2 text-[var(--muted)] hover:bg-[var(--paper)] hover:text-[var(--accent)]',
+                isActive(item.href) && 'text-[var(--accent)]',
+              ]}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  </nav>
+</header>

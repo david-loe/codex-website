@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    title: 'Beratung',
+    description: 'Dies ist ein Blindtext für spätere Leistungsbeschreibungen.',
+  },
+  {
+    title: 'Konzeption',
+    description: 'Dies ist ein Blindtext für spätere Projekt- und Angebotsdetails.',
+  },
+  {
+    title: 'Umsetzung',
+    description: 'Dies ist ein Blindtext für spätere Abläufe und Ergebnisse.',
+  },
+];
+---
+
+<BaseLayout
+  title="Leistungen"
+  description="Leistungsübersicht für den generischen Website Starter."
+>
+  <section class="mx-auto max-w-6xl px-5 py-16 md:py-20">
+    <div class="max-w-3xl">
+      <p class="mb-4 text-sm font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">Leistungen</p>
+      <h1 class="text-4xl font-semibold leading-tight tracking-[0] md:text-5xl">Leistungen</h1>
+      <p class="mt-6 text-lg text-[var(--muted)]">
+        Dies ist ein Blindtext für die spätere Einordnung von Angeboten, Projekten
+        und Arbeitsbereichen.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {services.map((service) => (
+        <article class="rounded-lg border border-[var(--line)] bg-white p-6">
+          <h2 class="text-xl font-semibold">{service.title}</h2>
+          <p class="mt-3 text-[var(--muted)]">{service.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

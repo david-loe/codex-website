@@ -1,0 +1,15 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-[var(--line)] bg-white">
+  <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-[var(--muted)] md:flex-row md:items-center md:justify-between">
+    <p>&copy; {year} Website Starter. Alle Rechte vorbehalten.</p>
+    <nav aria-label="Rechtliche Navigation">
+      <ul class="flex flex-wrap gap-5">
+        <li><a class="hover:text-[var(--accent)]" href="/impressum/">Impressum</a></li>
+        <li><a class="hover:text-[var(--accent)]" href="/datenschutz/">Datenschutz</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>

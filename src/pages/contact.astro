@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Kontakt"
+  description="Kontaktseite für den generischen Website Starter."
+>
+  <section class="mx-auto max-w-6xl px-5 py-16 md:py-20">
+    <div class="grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
+      <div>
+        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">Kontakt</p>
+        <h1 class="text-4xl font-semibold leading-tight tracking-[0] md:text-5xl">Kontakt</h1>
+        <p class="mt-6 text-lg text-[var(--muted)]">
+          Dies ist ein Blindtext für spätere Kontaktinformationen, Hinweise zur
+          Erreichbarkeit und passende nächste Schritte.
+        </p>
+      </div>
+      <div class="rounded-lg border border-[var(--line)] bg-white p-6">
+        <h2 class="text-xl font-semibold">Kontaktdaten</h2>
+        <dl class="mt-5 space-y-4 text-[var(--muted)]">
+          <div>
+            <dt class="font-semibold text-[var(--ink)]">E-Mail</dt>
+            <dd><a class="text-[var(--accent)] hover:underline" href="mailto:hello@example.com">hello@example.com</a></dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-[var(--ink)]">Hinweis</dt>
+            <dd>Dies ist ein Blindtext für spätere Kontakt- und Antwortzeiten.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
