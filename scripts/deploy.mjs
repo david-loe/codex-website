@@ -28,9 +28,9 @@ function run(command, args, options = {}) {
   return result;
 }
 
-function commandExists(command, args) {
+function commandExists(command, args = []) {
   const result = spawnSync(command, args, { stdio: 'ignore' });
-  return !result.error && result.status === 0;
+  return !result.error;
 }
 
 function importDotEnv(path = '.env') {
@@ -135,7 +135,7 @@ if (!commandExists('ssh', ['-V'])) {
   fail('OpenSSH ssh wurde nicht im PATH gefunden.');
 }
 
-if (!commandExists('scp', ['-V'])) {
+if (!commandExists('scp')) {
   fail('OpenSSH scp wurde nicht im PATH gefunden.');
 }
 
